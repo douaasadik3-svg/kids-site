@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>اختبار رمضان</title>
+
+<style>
+
+body{
+margin:0;
+font-family:tahoma;
+direction:rtl;
+text-align:center;
+background:linear-gradient(#284b63,#3c6e71);
+color:white;
+}
+
+/* HEADER */
+
+nav{
+background:#1b2a34;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* QUIZ BOX */
+
+.quiz-box{
+background:rgba(255,255,255,0.1);
+width:600px;
+margin:80px auto;
+padding:40px;
+border-radius:20px;
+}
+
+/* TITLE */
+
+h1{
+color:#ffd43b;
+}
+
+/* QUESTION */
+
+#question{
+font-size:22px;
+margin:20px 0;
+}
+
+/* ANSWERS */
+
+.answers button{
+display:block;
+width:100%;
+margin:10px 0;
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+background:white;
+}
+
+.answers button:hover{
+background:#ffd43b;
+}
+
+/* RESULT */
+
+#result{
+font-size:26px;
+color:#ffd43b;
+margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:100px;
+padding:20px;
+background:#1b2a34;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="qisas.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<div class="quiz-box">
+
+<h1>⭐ اختبار رمضان</h1>
+
+<div id="question"></div>
+
+<div class="answers">
+<button onclick="answer(0)" id="a0"></button>
+<button onclick="answer(1)" id="a1"></button>
+<button onclick="answer(2)" id="a2"></button>
+</div>
+
+<div id="result"></div>
+
+</div>
+
+<footer>
+2026 © موقع أطفال رمضان
+</footer>
+
+<script>
+
+let questions=[
+
+{
+q:"كم عدد أيام شهر رمضان تقريباً؟",
+a:["20","30","40"],
+correct:1
+},
+
+{
+q:"ما اسم الوجبة التي يأكلها الصائم عند المغرب؟",
+a:["السحور","الإفطار","الغداء"],
+correct:1
+},
+
+{
+q:"في أي ليلة نزل القرآن؟",
+a:["ليلة القدر","ليلة العيد","ليلة الجمعة"],
+correct:0
+},
+
+{
+q:"ماذا يفعل المسلمون بعد صلاة العشاء في رمضان؟",
+a:["صلاة التراويح","النوم","اللعب"],
+correct:0
+},
+
+{
+q:"ما اسم الشهر الذي يأتي قبل رمضان؟",
+a:["شعبان","محرم","ربيع الأول"],
+correct:0
+},
+
+{
+q:"ماذا يقول المسلم عندما يسمع الأذان؟",
+a:["الدعاء","الغناء","التصفيق"],
+correct:0
+},
+
+{
+q:"كم عدد أركان الإسلام؟",
+a:["5","6","7"],
+correct:0
+},
+
+{
+q:"ما اسم العيد بعد رمضان؟",
+a:["عيد الفطر","عيد الأضحى","عيد الميلاد"],
+correct:0
+},
+
+{
+q:"ما الشيء الذي يفعله المسلمون للفقراء في رمضان؟",
+a:["الزكاة والصدقة","اللعب","النوم"],
+correct:0
+},
+
+{
+q:"ما اسم الكتاب المقدس في الإسلام؟",
+a:["الإنجيل","القرآن","التوراة"],
+correct:1
+}
+
+];
+
+let current=0;
+let score=0;
+
+function loadQuestion(){
+
+if(current >= questions.length){
+
+document.getElementById("question").innerHTML="انتهى الاختبار 🎉";
+document.querySelector(".answers").style.display="none";
+document.getElementById("result").innerHTML="نتيجتك: "+score+" / "+questions.length;
+
+return;
+}
+
+let q=questions[current];
+
+document.getElementById("question").innerHTML=q.q;
+
+document.getElementById("a0").innerHTML=q.a[0];
+document.getElementById("a1").innerHTML=q.a[1];
+document.getElementById("a2").innerHTML=q.a[2];
+
+}
+
+function answer(i){
+
+if(i==questions[current].correct){
+
+score++;
+
+}
+
+current++;
+
+loadQuestion();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

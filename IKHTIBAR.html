@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>اختبار رمضان</title>
+
+<style>
+
+body{
+margin:0;
+font-family:tahoma;
+direction:rtl;
+background:linear-gradient(#284b63,#3c6e71);
+color:white;
+text-align:center;
+}
+
+/* HEADER */
+
+nav{
+background:#1b2a34;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* TITLE */
+
+h1{
+color:#ffd43b;
+margin-top:40px;
+}
+
+/* QUIZ BOX */
+
+.quiz{
+background:rgba(255,255,255,0.1);
+width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+}
+
+/* QUESTIONS */
+
+.question{
+margin:20px 0;
+font-size:18px;
+}
+
+.answers button{
+display:block;
+width:100%;
+margin:8px 0;
+padding:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:white;
+color:#333;
+font-size:16px;
+}
+
+/* RESULT */
+
+#result{
+font-size:22px;
+color:#ffd43b;
+margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+padding:20px;
+background:#1b2a34;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="qisas.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<h1>⭐ اختبار رمضان</h1>
+
+<div class="quiz">
+
+<div id="quiz"></div>
+
+<button onclick="finishQuiz()" style="margin-top:20px;padding:10px 20px;border:none;border-radius:10px;background:#ffd43b;">
+عرض النتيجة
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<footer>
+2026 © موقع أطفال رمضان
+</footer>
+
+<script>
+
+let questions = [
+
+{
+q:"كم عدد أركان الإسلام؟",
+a:["3","5","6"],
+correct:1
+},
+
+{
+q:"في أي شهر يصوم المسلمون؟",
+a:["رمضان","شعبان","ذو الحجة"],
+correct:0
+},
+
+{
+q:"ما اسم الوجبة قبل الفجر؟",
+a:["الإفطار","السحور","العشاء"],
+correct:1
+},
+
+{
+q:"ما اسم صلاة الليل في رمضان؟",
+a:["التراويح","الفجر","الضحى"],
+correct:0
+},
+
+{
+q:"متى يفطر الصائم؟",
+a:["عند الفجر","عند غروب الشمس","عند الظهر"],
+correct:1
+},
+
+{
+q:"ما الشيء الذي نسمعه عند الإفطار؟",
+a:["الأذان","المطر","الجرس"],
+correct:0
+},
+
+{
+q:"كم عدد الصلوات في اليوم؟",
+a:["5","4","6"],
+correct:0
+},
+
+{
+q:"ماذا يقول المسلم قبل الإفطار؟",
+a:["دعاء الإفطار","النشيد","التحية"],
+correct:0
+}
+
+];
+
+let score = 0;
+
+let quizDiv = document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+
+let html = `<div class="question">${i+1}. ${q.q}</div><div class="answers">`;
+
+q.a.forEach((ans,index)=>{
+
+html += `<button onclick="answer(${i},${index})">${ans}</button>`;
+
+});
+
+html += "</div>";
+
+quizDiv.innerHTML += html;
+
+});
+
+function answer(qIndex,aIndex){
+
+if(aIndex == questions[qIndex].correct){
+
+score++;
+
+alert("إجابة صحيحة 🎉");
+
+}else{
+
+alert("إجابة خاطئة");
+
+}
+
+}
+
+function finishQuiz(){
+
+document.getElementById("result").innerHTML = 
+"نتيجتك: " + score + " / " + questions.length;
+
+}
+
+</script>
+
+</body>
+</html>

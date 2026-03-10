@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>اتصل بنا - أطفال رمضان</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tajawal;
+}
+
+body{
+direction:rtl;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+nav{
+background:rgba(0,0,0,0.6);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:35px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:gold;
+transform:scale(1.1);
+}
+
+/* TITLE */
+
+.title{
+padding:70px 20px;
+}
+
+.title h1{
+font-size:55px;
+color:gold;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+.title p{
+margin-top:10px;
+font-size:20px;
+}
+
+/* CONTACT SECTION */
+
+.contact-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+padding:50px;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+color:#333;
+padding:30px;
+border-radius:15px;
+width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-form input,
+.contact-form textarea{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.contact-form button{
+
+background:gold;
+border:none;
+padding:12px;
+width:100%;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* INFO */
+
+.contact-info{
+
+background:white;
+color:#333;
+padding:30px;
+border-radius:15px;
+width:300px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-info h3{
+margin-bottom:15px;
+}
+
+/* STARS */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3}
+to{opacity:1}
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="histoires.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<section class="title">
+
+<h1>📩 اتصل بنا</h1>
+
+<p>إذا كان لديك سؤال أو اقتراح راسلنا</p>
+
+</section>
+
+<section class="contact-container">
+
+<div class="contact-form">
+
+<h3>أرسل رسالة</h3>
+
+<input type="text" placeholder="الاسم">
+
+<input type="email" placeholder="البريد الإلكتروني">
+
+<textarea rows="5" placeholder="اكتب رسالتك"></textarea>
+
+<button onclick="sendMessage()">إرسال</button>
+
+</div>
+
+
+<div class="contact-info">
+
+<h3>معلومات التواصل</h3>
+
+<p>📧 البريد: kids@gmail.com</p>
+
+<p>📍 المغرب</p>
+
+<p>🌙 موقع تعليمي للأطفال عن رمضان</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>موقع أطفال رمضان © 2026</p>
+
+</footer>
+
+<script>
+
+function sendMessage(){
+
+alert("تم إرسال رسالتك بنجاح 🌙");
+
+}
+
+/* STARS */
+
+for(let i=0;i<50;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>

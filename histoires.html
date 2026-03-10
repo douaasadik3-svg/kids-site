@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>قصص رمضان للأطفال</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma;
+}
+
+body{
+direction:rtl;
+text-align:center;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+background:rgba(0,0,0,0.6);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:35px;
+}
+
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:gold;
+transform:scale(1.1);
+}
+
+/* TITLE */
+
+.title{
+padding:70px 20px;
+}
+
+.title h1{
+font-size:55px;
+color:gold;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* STORIES */
+
+.stories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding:50px;
+}
+
+.story{
+background:white;
+color:#333;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.story:hover{
+transform:scale(1.05);
+}
+
+.story h3{
+color:#203a43;
+margin-bottom:10px;
+}
+
+.story p{
+font-size:15px;
+line-height:1.7;
+}
+
+/* STARS */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3}
+to{opacity:1}
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="histoires.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<section class="title">
+
+<h1>📖 قصص رمضان للأطفال</h1>
+
+<p>اقرأوا قصصا جميلة ومفيدة عن شهر رمضان</p>
+
+</section>
+
+<section class="stories">
+
+<div class="story">
+<h3>🌙 قصة الطفل الصائم</h3>
+<p>
+كان هناك طفل اسمه علي، أراد أن يصوم مثل والده في رمضان.
+استيقظ مبكرا وتناول السحور مع عائلته.
+كان يشعر بالتعب قليلا لكنه كان سعيدا لأنه يتعلم الصبر.
+وفي المساء أفطر مع عائلته وكان فخورا بنفسه.
+</p>
+</div>
+
+<div class="story">
+<h3>⭐ قصة فانوس رمضان</h3>
+<p>
+في ليلة جميلة من رمضان اشترى أحمد فانوسا جديدا.
+كان يضيء بألوان جميلة.
+علق أحمد الفانوس في غرفته وكان سعيدا جدا.
+كل ليلة كان يشعل الفانوس ويقرأ قصة قبل النوم.
+</p>
+</div>
+
+<div class="story">
+<h3>🍽 قصة الإفطار مع الجيران</h3>
+<p>
+كانت عائلة مريم تحب مشاركة الطعام مع الجيران في رمضان.
+في أحد الأيام حضروا طعاما لذيذا وطرقوا باب الجيران.
+فرح الجميع وتناولوا الإفطار معا.
+تعلمت مريم أن رمضان شهر الكرم والمحبة.
+</p>
+</div>
+
+<div class="story">
+<h3>🕌 قصة الذهاب إلى المسجد</h3>
+<p>
+ذهب يوسف مع والده إلى المسجد في رمضان.
+استمع إلى الإمام وهو يتحدث عن الخير.
+شعر يوسف بالراحة والسعادة.
+ومنذ ذلك اليوم أصبح يحب الذهاب إلى المسجد.
+</p>
+</div>
+
+<div class="story">
+<h3>🎁 قصة مساعدة الفقراء</h3>
+<p>
+في رمضان قررت سارة أن تساعد الفقراء.
+جمعت ألعابها القديمة وملابسها وأعطتها للأطفال المحتاجين.
+كانت سعيدة لأنها أدخلت الفرح إلى قلوبهم.
+</p>
+</div>
+
+<div class="story">
+<h3>🌟 قصة نجمة رمضان</h3>
+<p>
+في كل ليلة من رمضان كان كريم ينظر إلى السماء.
+كان يرى النجوم تلمع مثل الفوانيس.
+تمنى أن يكون رمضان دائما مليئا بالخير والمحبة.
+</p>
+</div>
+
+</section>
+
+<footer>
+
+<p>موقع أطفال© 2026</p>
+
+</footer>
+
+<script>
+
+for(let i=0;i<50;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>موقع أطفال </title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tajawal;
+}
+
+body{
+direction:rtl;
+color:white;
+text-align:center;
+background-image:url('image/img.png');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* overlay */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* navbar */
+
+nav{
+background:rgba(0,0,0,0.7);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:gold;
+transform:scale(1.1);
+}
+
+/* hero */
+
+.hero{
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:60px;
+color:gold;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+.hero p{
+font-size:22px;
+margin-top:15px;
+}
+
+/* cards */
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+padding:60px;
+}
+
+.card{
+width:260px;
+background:white;
+color:#333;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transition:0.4s;
+}
+
+.card:hover{
+transform:scale(1.08);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.card h3{
+margin:10px;
+}
+
+.card p{
+padding:0 10px 15px;
+}
+
+/* button */
+
+.btn{
+background:gold;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+/* moon */
+
+.moon{
+position:absolute;
+top:60px;
+left:80px;
+width:80px;
+height:80px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 30px gold;
+animation:moon 5s infinite alternate;
+}
+
+@keyframes moon{
+from{transform:translateY(0)}
+to{transform:translateY(20px)}
+}
+
+/* stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3}
+to{opacity:1}
+}
+
+footer{
+background:black;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="histoires.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<section class="hero">
+
+<h1>🌙موقع أطفال </h1>
+
+<p>
+مرحبا بكم في موقع ممتع لتعلم  للأطفال
+</p>
+
+</section>
+
+<section class="container">
+
+<div class="card">
+<img src="image/coloriage.jpeg">
+<h3>أنشطة </h3>
+<p>أنشطة ممتعة مثل التلوين والألعاب.</p>
+<a href="activites.html">
+<button class="btn">اكتشف</button>
+</a>
+</div>
+
+<div class="card">
+<img src="image/hist.jpeg">
+<h3>قصص رمضان</h3>
+<p>قصص جميلة ومفيدة للأطفال.</p>
+<a href="histoires.html">
+<button class="btn">اقرأ</button>
+</a>
+</div>
+
+<div class="card">
+<img src="image/quiz.jpeg">
+<h3>ألعاب</h3>
+<p>ألعاب تعليمية للأطفال.</p>
+<a href="quiz.html">
+<button class="btn">العب</button>
+</a>
+</div>
+
+</section>
+
+<footer>
+
+<p>موقع أطفال  2026</p>
+
+</footer>
+
+<script>
+
+for(let i=0;i<50;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>

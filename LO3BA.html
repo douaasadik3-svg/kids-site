@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لعبة الذاكرة</title>
+
+<style>
+
+body{
+margin:0;
+font-family:tahoma;
+direction:rtl;
+text-align:center;
+background:linear-gradient(#284b63,#3c6e71);
+color:white;
+}
+
+/* HEADER */
+
+nav{
+background:#1b2a34;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* TITLE */
+
+h1{
+color:#ffd43b;
+margin-top:40px;
+}
+
+/* GAME BOX */
+
+.game{
+background:rgba(255,255,255,0.1);
+width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.card{
+height:100px;
+background:#ffd43b;
+border-radius:10px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+color:transparent;
+transition:0.3s;
+}
+
+.card.open{
+background:white;
+color:#333;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+padding:20px;
+background:#1b2a34;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="qisas.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<h1>🧠 لعبة الذاكرة</h1>
+
+<div class="game">
+
+<div class="grid" id="grid"></div>
+
+</div>
+
+<footer>
+2026 © موقع أطفال رمضان
+</footer>
+
+<script>
+
+let emojis = ["⭐","⭐","🌙","🌙","🕌","🕌","📿","📿","🏮","🏮","🍪","🍪"];
+
+emojis.sort(()=>0.5 - Math.random());
+
+let grid = document.getElementById("grid");
+
+let first = null;
+let second = null;
+
+emojis.forEach((emoji)=>{
+
+let card = document.createElement("div");
+card.className="card";
+card.innerHTML=emoji;
+
+card.onclick=function(){
+
+if(card.classList.contains("open")) return;
+
+card.classList.add("open");
+
+if(!first){
+
+first=card;
+
+}else{
+
+second=card;
+
+if(first.innerHTML==second.innerHTML){
+
+first=null;
+second=null;
+
+}else{
+
+setTimeout(()=>{
+first.classList.remove("open");
+second.classList.remove("open");
+first=null;
+second=null;
+},800);
+
+}
+
+}
+
+};
+
+grid.appendChild(card);
+
+});
+
+</script>
+
+</body>
+</html>

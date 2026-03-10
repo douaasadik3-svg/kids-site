@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>أنشطة رمضان للأطفال</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma;
+}
+
+body{
+direction:rtl;
+text-align:center;
+color:white;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+overflow-x:hidden;
+}
+
+/* navbar */
+
+nav{
+background:rgba(0,0,0,0.6);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:35px;
+}
+
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:gold;
+transform:scale(1.1);
+}
+
+/* title */
+
+.title{
+padding:70px 20px;
+}
+
+.title h1{
+font-size:50px;
+color:gold;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* activities */
+
+.activities{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:50px;
+}
+
+.activity{
+background:white;
+color:#333;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.activity:hover{
+transform:scale(1.07);
+}
+
+.activity img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.activity h3{
+margin:10px;
+}
+
+.activity p{
+padding:0 10px 15px;
+}
+
+.btn{
+background:gold;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+/* stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3}
+to{opacity:1}
+}
+
+footer{
+background:#111;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="histoires.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<section class="title">
+
+<h1>🎨 أنشطة  للأطفال</h1>
+
+<p>تعلموا واستمتعوا بأنشطة ممتعة</p>
+
+</section>
+
+<section class="activities">
+
+
+<div class="activity">
+<img src="image/lo3ba.jpeg">
+<h3>لعبة الذاكرة</h3>
+<p>طابق الصور المتشابهة.</p>
+<a href="LO3BA.html">
+<button class="btn">العب</button>
+</a>
+</div>
+
+<div class="activity">
+<img src="image/maghara.jpeg">
+<h3>متاهة </h3>
+<p>ساعد الطفل للوصول إلى المسجد.</p>
+<a href="MATAHA.html">
+<button class="btn">ابدأ</button>
+</a>
+</div>
+
+
+
+
+<div class="activity">
+<img src="image/ikhtibar.jpeg">
+<h3>اختبار رمضان</h3>
+<p>اختبر معلوماتك عن رمضان.</p>
+<a href="IKHTIBAR.html">
+<button class="btn">ابدأ</button>
+</a>
+</div>
+
+</section>
+
+<footer>
+
+<p>موقع أطفال رمضان © 2026</p>
+
+</footer>
+
+<script>
+
+for(let i=0;i<50;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>

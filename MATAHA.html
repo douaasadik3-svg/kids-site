@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>متاهة رمضان</title>
+
+<style>
+
+body{
+margin:0;
+font-family:tahoma;
+direction:rtl;
+text-align:center;
+background:linear-gradient(#284b63,#3c6e71);
+color:white;
+}
+
+/* HEADER */
+
+nav{
+background:#1b2a34;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* TITLE */
+
+h1{
+color:#ffd43b;
+margin-top:40px;
+}
+
+/* GAME BOX */
+
+.game{
+background:rgba(255,255,255,0.1);
+width:500px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+}
+
+/* MAZE */
+
+.maze{
+display:grid;
+grid-template-columns:repeat(10,45px);
+justify-content:center;
+margin-top:20px;
+}
+
+.cell{
+width:45px;
+height:45px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.wall{
+background:#1b2a34;
+}
+
+.player{
+background-image:url("https://cdn-icons-png.flaticon.com/512/4140/4140048.png");
+background-size:cover;
+}
+
+.goal{
+background-image:url("https://cdn-icons-png.flaticon.com/512/190/190411.png");
+background-size:cover;
+background-position:center;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+padding:20px;
+background:#1b2a34;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="activites.html">الأنشطة</a>
+<a href="qisas.html">القصص</a>
+<a href="contact.html">اتصل بنا</a>
+</nav>
+
+<h1>🧩 متاهة رمضان</h1>
+<p>استعمل الأسهم للوصول إلى المسجد</p>
+
+<div class="game">
+<div class="maze" id="maze"></div>
+</div>
+
+<footer>
+2026 © موقع أطفال رمضان
+</footer>
+
+<script>
+
+let mazeData=[
+[0,0,1,0,0,0,1,0,0,0],
+[1,0,1,0,1,0,1,0,1,0],
+[1,0,0,0,1,0,0,0,1,0],
+[1,1,1,0,1,1,1,0,1,0],
+[0,0,0,0,0,0,1,0,0,0]
+];
+
+let player={x:0,y:4};
+let goal={x:9,y:0};
+
+let maze=document.getElementById("maze");
+
+function draw(){
+
+maze.innerHTML="";
+
+for(let y=0;y<mazeData.length;y++){
+
+for(let x=0;x<mazeData[y].length;x++){
+
+let cell=document.createElement("div");
+cell.className="cell";
+
+if(mazeData[y][x]==1) cell.classList.add("wall");
+
+if(player.x==x && player.y==y) cell.classList.add("player");
+
+if(goal.x==x && goal.y==y) cell.classList.add("goal");
+
+maze.appendChild(cell);
+
+}
+
+}
+
+}
+
+draw();
+
+document.addEventListener("keydown",function(e){
+
+let nx=player.x;
+let ny=player.y;
+
+if(e.key=="ArrowRight") nx++;
+if(e.key=="ArrowLeft") nx--;
+if(e.key=="ArrowUp") ny--;
+if(e.key=="ArrowDown") ny++;
+
+if(mazeData[ny] && mazeData[ny][nx]==0){
+
+player.x=nx;
+player.y=ny;
+
+}
+
+if(player.x==goal.x && player.y==goal.y){
+
+alert("🎉 أحسنت! وصلت إلى المسجد");
+
+}
+
+draw();
+
+});
+
+</script>
+
+</body>
+</html>
